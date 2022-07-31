@@ -1,0 +1,50 @@
+[
+  {
+    "_id": 1,
+    "name": "Tools Manufacturing",
+    "description": "Private Labeling is a win-win situation for retailers and consumers in the current retail market system. A Consumer gets a variety, better quality and good prices for the products. Now retailer can concentrate on their purchases without any large investments. Retailer’s decision on make or buy and sourcing is respectable. What if retailer decides to source the product ? Then, Retailer needs to check the ability of the supplier to provide products within the given time frame, at the required quality and price levels. In case of products like hand tools, it is necessary that the durability, trending designs, variety of the products and packaging of the products. At last main facility rises in mind timely shipment to retailer.",
+    "image": "https://myventurepad.com/wp-content/uploads/2018/09/1200px-20060513_toolbox.jpg",
+    "price": 150,
+    "minQty": 50
+  },
+  {
+    "_id": 2,
+    "name": "Modern Tools Used in Manufacturing",
+    "description": "Metal fabrication processes are often an effective way to generate a given product, however, one needs additional modern tools to achieve a high level of specificity and uniformity. To do so, machining tools can be used to selectively remove or finish a piece of metal or metal-based product. Modern machine tools are traditionally powered by electricity; additional automation of the machining process can be achieved by employing a CNC machine tool, guided by computer programming. The major benefit of modern machining tools is the exceptional uniformity they deliver when manufacturing numerous products with identical parameters and requirements. Many modern machining tools are merely improvements on manual machining tools that have been around for centuries. Other relatively new designs are possible because of recent advancements in technology.",
+    "image": "https://cdn.thomasnet.com/insights-images/embedded-images/ba20fdcd-10da-4764-b609-7f3507d2bb60/f7cef038-a108-404f-8212-c2f82adc16ea/Medium/modern-machining-tools-min.jpg",
+    "price": 750,
+    "minQty": 500
+  },
+  {
+    "_id": 3,
+    "name": "Nut Bolt Manufucturing",
+    "description": "Nut and bolts are available in various shapes, designs, and sizes. Nuts and bolts are the essential items for the fastening purpose in industries where the replacement of pieces and parts is necessary.Generally, every industry uses these items on a regular basis. Bolt is a piece of a metal rod, whose one end is unsettled and another end is threaded. The nut is the item that rolls on these threads.",
+    "image": "https://5.imimg.com/data5/KQ/NF/MY-1566860/industrial-screws-500x500.png",
+    "price": 200,
+    "minQty": 120
+  },
+  {
+    "_id": 4,
+    "name": "Gear Manufacturing",
+    "description": "AmTech 25+ years of custom gear manufacturing services are well suited for high quality gears, related components and transmission gear assemblies on mid-to-high volume parts per customer specifications. All products are manufactured with the latest machinery capabilities with an emphasis on cost effective production. Our wide variety of custom gears includes: ring & pinion gearsets, worm / helical / planetary gears & gearboxes. Primary clients for AmTech gear technology are in the Automotive, Agricultural, Off-Highway, Machinery, Pump and climate control OEM / Tier 1 / Tier 2 manufacturing segments.The high quality materials we use include carbon steel, stainless steel, bronze and plastics. We can also finish and heat treat parts, and offer just-in-time delivery services when required.",
+    "image": "https://www.altenergymag.com/images/articles/35286.jpg",
+    "price": 5600,
+    "minQty": 1
+  },
+  {
+    "_id": 5,
+    "name": "Bearing Manufacturing",
+    "description": "We make it easy for distributors by providing a one-stop JIT (Just-in-Time) supply solution with over 20,000 different bearings & power transmission products shipped to arrive next day or 2nd day.  We reduce friction by reducing acquisition time, lowering transaction costs and increasing gross profits with ecommerce solutions and expert XREF (cross-reference) & technical service & support.",
+    "image": "https://www.kaplanpathways.com/wp-content/uploads/2021/12/best-universities-for-mechanical-engineering-1440x560.jpg",
+    "price": 2000,
+    "minQty": 5
+  },
+  {
+    "_id": 6,
+    "name": "Machine Spares Manufacturing",
+    "description": "We specialize in providing advanced manufacturing solutions for various customers and OEM's looking for high volume runs of CNC screw machine products and screw machined parts. As a leading CNC Swiss products manufacturer, our custom screw machine services include manufacturing parts to a variety of capacities for a wide range of industries and industrial applications.",
+    "image": "https://www.coxmanufacturing.com/assets/images/Precision-CNC-Screw-Machined-Product-Assortment.jpg",
+    "price": 1500,
+    "minQty": 8
+  }
+]

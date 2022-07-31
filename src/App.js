@@ -1,19 +1,34 @@
 import { Route, Routes } from 'react-router-dom';
-import './App.css';
+import UserOrders from './components/Dashboard/UserOrders';
+import UserProfile from './components/Dashboard/UserProfile';
+import UserReview from './components/Dashboard/UserReview';
+import Footer from './components/shared/Footer/Footer';
+import Header from './components/shared/Header/Header';
+import Dashboard from './pages/Dashboard/Dashboard';
 import Home from './pages/Home/Home';
 import Login from './pages/Login/Login';
 import NotFound from './pages/NotFound/NotFound';
+import Parchage from './pages/Parchage/Parchage';
 import Registration from './pages/Registration/Registration';
+import RequireAuth from './pages/RequireAuth/RequireAuth';
 
 function App() {
   return (
-    <div className="App">
+    <div className='container mx-auto'>
+      <Header/>
       <Routes>
         <Route path='/' element={<Home/>} />
         <Route path='/login' element={<Login/>} />
         <Route path='/register' element={<Registration/>} />
+        <Route path='/order-now/:id' element={<RequireAuth><Parchage/></RequireAuth>} />
+        <Route path='/dashboard' element={<RequireAuth><Dashboard/></RequireAuth>}>
+          <Route index path='my-profile' element={<RequireAuth><UserProfile/></RequireAuth>} />
+          <Route path='my-order' element={<RequireAuth><UserOrders/></RequireAuth>} />
+          <Route path='my-review' element={<RequireAuth><UserReview/></RequireAuth>} />
+        </Route>
         <Route path='*' element={<NotFound/>} />
       </Routes>
+      <Footer/>
     </div>
   );
 }

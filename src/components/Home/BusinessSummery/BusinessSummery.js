@@ -1,11 +1,11 @@
 import React from 'react';
 
-const NotFound = () => {
+const BusinessSummery = () => {
     return (
         <div>
-            page not found
+            
         </div>
     );
 };
 
-export default NotFound;
+export default BusinessSummery;

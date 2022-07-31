@@ -1,11 +1,11 @@
 import React from 'react';
 
-const NotFound = () => {
+const UserOrders = () => {
     return (
         <div>
-            page not found
+            My Orders
         </div>
     );
 };
 
-export default NotFound;
+export default UserOrders;
