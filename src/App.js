@@ -1,4 +1,6 @@
 import { Route, Routes } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import UserOrders from './components/Dashboard/UserOrders';
 import UserProfile from './components/Dashboard/UserProfile';
 import UserReview from './components/Dashboard/UserReview';
@@ -22,13 +24,14 @@ function App() {
         <Route path='/register' element={<Registration/>} />
         <Route path='/order-now/:id' element={<RequireAuth><Parchage/></RequireAuth>} />
         <Route path='/dashboard' element={<RequireAuth><Dashboard/></RequireAuth>}>
-          <Route index path='my-profile' element={<RequireAuth><UserProfile/></RequireAuth>} />
+          <Route index element={<RequireAuth><UserProfile/></RequireAuth>} />
           <Route path='my-order' element={<RequireAuth><UserOrders/></RequireAuth>} />
           <Route path='my-review' element={<RequireAuth><UserReview/></RequireAuth>} />
         </Route>
         <Route path='*' element={<NotFound/>} />
       </Routes>
       <Footer/>
+      <ToastContainer/>
     </div>
   );
 }
