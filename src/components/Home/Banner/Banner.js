@@ -21,7 +21,7 @@ const Banner = () => {
       </div>
       <div className="flex flex-col items-center">
         <h2 className="text-4xl mb-2 font-thin">Corporate Vision Statement</h2>
-        <p className="w-5/12 text-2xl text-center decoration-gray-500">We will be the leading provider of quality and innovative industrial repair and maintenance solutions for the U.S. Market while ensuring corporate integrity, employee safety, and customer satisfaction</p>
+        <p className="lg:w-5/12 text-2xl text-center decoration-gray-500">We will be the leading provider of quality and innovative industrial repair and maintenance solutions for the U.S. Market while ensuring corporate integrity, employee safety, and customer satisfaction</p>
       </div>
     </div>
   );

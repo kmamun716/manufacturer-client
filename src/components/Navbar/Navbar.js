@@ -1,7 +1,10 @@
 import React from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
 import { Link } from "react-router-dom";
+import auth from "../../firebase.init";
 
-const Navbar = ({menuItem}) => {
+const Navbar = ({ menuItem }) => {
+  const [user] = useAuthState(auth);
   return (
     <div className="navbar bg-base-100">
       <div className="navbar-start">
@@ -26,18 +29,23 @@ const Navbar = ({menuItem}) => {
             tabIndex="0"
             className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
           >
-           {menuItem}
+            {menuItem}
           </ul>
         </div>
-        <Link to='/' className="btn btn-ghost normal-case text-xl">Tools Manufacturer</Link>
+        <Link to="/" className="btn btn-ghost normal-case text-xl">
+          Tools Manufacturer
+        </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal p-0">
-          {menuItem}
-        </ul>
+        <ul className="menu menu-horizontal p-0">{menuItem}</ul>
       </div>
       <div className="navbar-end">
-      <label htmlFor="dashboard-drawer" tabIndex="1" className="btn btn-ghost lg:hidden">
+        {user && (
+          <label
+            htmlFor="dashboard-drawer"
+            tabIndex="1"
+            className="btn btn-ghost lg:hidden"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-5 w-5"
@@ -53,6 +61,7 @@ const Navbar = ({menuItem}) => {
               />
             </svg>
           </label>
+        )}
       </div>
     </div>
   );
