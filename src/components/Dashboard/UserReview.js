@@ -58,7 +58,8 @@ const UserReview = () => {
   return (
     <div>
       <h2 className="text-2xl text-center">Review</h2>
-      <form onSubmit={handleSubmit(onSubmit)}>
+      <div className="flex justify-center">
+      <form className="flex items-center" onSubmit={handleSubmit(onSubmit)}>
         <div className="form-control w-full max-w-xs">
           <label className="label">
             <span className="label-text">Write Your Review:</span>
@@ -66,17 +67,20 @@ const UserReview = () => {
           <textarea
             type="text"
             {...register("review")}
-            className="input input-bordered w-full max-w-xs"
+            className="input input-bordered w-full max-w-xs textarea-ghost h-24 w-60"
           />
         </div>
-        <input type="submit" className="btn btn-accent mt-2" value="submit" />
+        <input type="submit" className="btn btn-accent btn-sm mt-8 ml-2" value="submit" />
       </form>
+      </div>
       <div>
         <h3 className="text-2xl text-center my-4 underline ">My Review</h3>
-        <div className="grid grid-cols-3 gap-4">
+        <div className="flex justify-center">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
           {reviews?.map((review) => (
             <Review key={review._id} review={review} />
           ))}
+        </div>
         </div>
       </div>
     </div>

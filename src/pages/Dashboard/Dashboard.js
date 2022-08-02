@@ -17,7 +17,7 @@ const Dashboard = () => {
       </div>
       <div className="drawer-side">
         <label htmlFor="dashboard-drawer" className="drawer-overlay"></label>
-        <ul className="menu p-4 overflow-y-auto w-80 bg-base-100 text-base-content">
+        <ul tabIndex='1' className="menu p-4 overflow-y-auto w-80 bg-base-100 text-base-content">
           <li> <Link to="/dashboard">My Profile</Link></li>
           {registeredUser?.role !== "admin" && (
             <>

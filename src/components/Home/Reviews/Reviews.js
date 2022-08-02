@@ -15,10 +15,12 @@ const Reviews = () => {
   return (
     <div>
       <h2 className="text-3xl text-center font-bold my-4">User Reviews</h2>
-      <div className="grid grid-cols-4 gap-8">
-        {reviews?.slice(0, 4).map((review) => (
-          <Review key={review._id} review={review} />
-        ))}
+      <div className="flex justify-center">
+        <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
+          {reviews?.slice(0, 4).map((review) => (
+            <Review key={review._id} review={review} />
+          ))}
+        </div>
       </div>
     </div>
   );
