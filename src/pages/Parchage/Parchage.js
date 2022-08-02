@@ -11,7 +11,7 @@ const Parchage = () => {
   const [minQty, setMinQty] = useState(0);
   const { id } = useParams();
   useEffect(()=>{
-    fetch(`http://localhost:4000/mf/service/${id}`)
+    fetch(`https://powerful-oasis-61993.herokuapp.com/mf/service/${id}`)
     .then((res) => res.json())
     .then(data=>{
       setService(data)
@@ -37,7 +37,7 @@ const Parchage = () => {
       unitPrice:service?.price,
       price: service?.minQty * service?.price
     }
-    fetch('http://localhost:4000/mf/createOrder/',{
+    fetch('https://powerful-oasis-61993.herokuapp.com/mf/createOrder/',{
       method: 'POST',
       headers:{
         'content-type': 'application/json'
@@ -49,7 +49,7 @@ const Parchage = () => {
       console.log(data)
       if(data.acknowledged){
         toast.success(`Order Successfully, order id is: ${data.insertedId}`);
-        fetch(`http://localhost:4000/mf/availableQty`,{
+        fetch(`https://powerful-oasis-61993.herokuapp.com/mf/availableQty`,{
           method: 'PUT',
           headers:{
             'content-type': 'application/json',

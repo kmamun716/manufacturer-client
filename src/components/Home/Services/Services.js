@@ -4,7 +4,7 @@ import Loading from '../../shared/Loading/Loading';
 import Service from "../Service/Service";
 
 const Services = () => { 
-  const {data:services, isLoading} = useQuery(['services'],()=>fetch("http://localhost:4000/mf/services").then(res=>res.json()));
+  const {data:services, isLoading} = useQuery(['services'],()=>fetch("https://powerful-oasis-61993.herokuapp.com/mf/services").then(res=>res.json()));
   if(isLoading){
     return <Loading/>
   }

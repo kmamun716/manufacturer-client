@@ -8,7 +8,7 @@ import Loading from "../shared/Loading/Loading";
 const Users = () => {
   const [currentUser] = useAuthState(auth);
   const { data, isLoading } = useQuery(["users"], () =>
-    fetch("http://localhost:4000/mf/allUser").then((res) => res.json())
+    fetch("https://powerful-oasis-61993.herokuapp.com/mf/allUser").then((res) => res.json())
   );
   if (isLoading) {
     return <Loading />;
@@ -16,7 +16,7 @@ const Users = () => {
   const handleChangeRole = (email, role) => {
     const userRole = { role: "user" };
     const adminRole = { role: "admin" };
-    fetch(`http://localhost:4000/mf/userRole/${email}`, {
+    fetch(`https://powerful-oasis-61993.herokuapp.com/mf/userRole/${email}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",

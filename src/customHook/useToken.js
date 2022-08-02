@@ -4,13 +4,14 @@ const useToken=user=>{
     const [currentUser, setCurrentUser] = useState({});
     useEffect(()=>{
         const email = user?.email;    
+        const name = user?.displayName;
         if(user?.photoURL){
-            setCurrentUser({email: email, img: user.photoURL})
+            setCurrentUser({email: email, name, img: user.photoURL})
         }else{
-            setCurrentUser({email: email})
+            setCurrentUser({email: email, name})
         }
         if(email){
-            fetch(`http://localhost:4000/mf/addUser/${email}`,{
+            fetch(`https://powerful-oasis-61993.herokuapp.com/mf/addUser/${email}`,{
                 method:'PUT',
                 headers:{
                     'content-type':'application/json'

@@ -8,7 +8,7 @@ import Loading from '../shared/Loading/Loading';
 const UserOrders = () => {
   const [user] = useAuthState(auth);
   const { data: orders, refetch, isLoading } = useQuery(["orders"], () =>
-    fetch(`http://localhost:4000/mf/orders/${user?.email}`,{
+    fetch(`https://powerful-oasis-61993.herokuapp.com/mf/orders/${user?.email}`,{
       headers:{
         authorization: `Bearer ${localStorage.getItem('accessToken')}`
       }
@@ -17,7 +17,7 @@ const UserOrders = () => {
     )
   );
   const handleDelete =id=>{
-    fetch(`http://localhost:4000/mf/orders/${id}`,{
+    fetch(`https://powerful-oasis-61993.herokuapp.com/mf/orders/${id}`,{
         method: 'DELETE'
     })
     .then(res=>res.json())

@@ -3,7 +3,7 @@ import React from 'react';
 import Loading from '../shared/Loading/Loading';
 
 const ManageOrder = () => {
-    const {data: orders, isLoading} = useQuery(['orders'],()=>fetch('http://localhost:4000/mf/orders').then(res=>res.json()))
+    const {data: orders, isLoading} = useQuery(['orders'],()=>fetch('https://powerful-oasis-61993.herokuapp.com/mf/orders').then(res=>res.json()))
     if(isLoading){
         return <Loading/>
     }
