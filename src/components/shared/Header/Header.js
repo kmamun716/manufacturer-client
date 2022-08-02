@@ -8,12 +8,21 @@ import Navbar from '../../Navbar/Navbar';
 const Header = () => {   
     const location = useLocation();
     const [user] = useAuthState(auth);
+
     const menuItem = <>
         {user? <>
             <li><Link to='/dashboard'>Dashboard</Link></li>
-            <li><p className='text-red-500' onClick={()=>signOut(auth)}>Log Out</p></li>
+            <li><p 
+                    className='text-red-500' 
+                    onClick={()=>{
+                        signOut(auth)
+                        localStorage.removeItem('accessToken')
+                    }}
+                >Log Out</p>
+            </li>
         </> : location.pathname !=='/login' ? <li> <Link to='/login'>Login</Link> </li>: ''} 
-    </>
+    </>;
+
     return (
         <div>
             <Navbar menuItem={menuItem}/>

@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import Loading from "../../components/shared/Loading/Loading";
 import SocialLogin from "../../components/shared/SocialLogin/SocialLogin";
+import useToken from "../../customHook/useToken";
 import auth from "../../firebase.init";
 
 const Login = () => {
@@ -18,11 +19,13 @@ const Login = () => {
   let from = location.state?.from?.pathname || "/";
   let signInErrorMessage;
 
+  const [token] = useToken(user || gUser || eUser);
+
   useEffect(() => {
-    if (user || gUser|| eUser) {
+    if (token) {
       navigate(from, { replace: true });
     }
-  }, [eUser, gUser, user, from, navigate]);
+  }, [token, from, navigate]);
 
   if(loading || gLoading || eLoading){
     return <Loading/>

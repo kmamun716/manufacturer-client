@@ -4,6 +4,7 @@ import { useForm } from 'react-hook-form';
 import { Link, useNavigate } from 'react-router-dom';
 import Loading from '../../components/shared/Loading/Loading';
 import SocialLogin from '../../components/shared/SocialLogin/SocialLogin';
+import useToken from '../../customHook/useToken';
 import auth from '../../firebase.init';
 
 const Registration = () => {
@@ -12,13 +13,15 @@ const Registration = () => {
     const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
     const [ createUserWithEmailAndPassword, eUser, eLoading, eError ] = useCreateUserWithEmailAndPassword(auth);
     const [updateProfile, updating, updateError] = useUpdateProfile(auth);
+    const [token] = useToken(user || eUser);
     let signUpErrorMessage;
     let passwordMatchinError;
+
     useEffect(()=>{
-        if(user || eUser){
+        if(token){
             navigate('/dashboard')
         }
-    },[eUser, user, navigate])
+    },[token, navigate])
     const onSubmit=async data=>{
         if(data){
             const {name, email, password, confirmPassword} = data;

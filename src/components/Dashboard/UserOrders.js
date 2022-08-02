@@ -3,11 +3,16 @@ import React from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { toast } from "react-toastify";
 import auth from "../../firebase.init";
+import Loading from '../shared/Loading/Loading';
 
 const UserOrders = () => {
   const [user] = useAuthState(auth);
-  const { data: orders, refetch } = useQuery(["orders"], () =>
-    fetch(`http://localhost:4000/mf/orders/${user?.email}`).then((res) =>
+  const { data: orders, refetch, isLoading } = useQuery(["orders"], () =>
+    fetch(`http://localhost:4000/mf/orders/${user?.email}`,{
+      headers:{
+        authorization: `Bearer ${localStorage.getItem('accessToken')}`
+      }
+    }).then((res) =>
       res.json()
     )
   );
@@ -24,6 +29,9 @@ const UserOrders = () => {
             toast.error('something wrong')
         }
     })
+  }
+  if(isLoading){
+    return <Loading />
   }
   return (
     <div>

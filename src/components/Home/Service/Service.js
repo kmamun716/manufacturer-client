@@ -14,7 +14,7 @@ const Service = ({service}) => {
         <p>{description.slice(0,100)} ....</p>
         <p>Price: start from <span className="text-accent">${price}</span></p>
         <div className="card-actions justify-end">
-          <button className="btn btn-primary" onClick={()=>navigate(`/order-now/${_id}`)}>Order Now</button>
+          <button className="btn btn-primary" onClick={()=>navigate(`/order-now/${_id}`)}>Order Page</button>
         </div>
       </div>
     </div>
