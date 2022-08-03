@@ -14,7 +14,7 @@ const DeleteConfirmation = ({order, handleDelete}) => {
             <label htmlFor="delete-modal" className="btn btn-accent text-white font-bold">
               No
             </label>
-            <label onClick={()=>handleDelete(order._id)} className="btn btn-warning">
+            <label htmlFor="delete-modal" onClick={()=>handleDelete(order._id)} className="btn btn-warning">
               Confirm Delete
             </label>
           </div>
