@@ -30,7 +30,7 @@ const BusinessSummery = () => {
         },
     ]
     return (
-        <section className='flex flex-col items-center my-6 py-8'>
+        <section className='flex flex-col items-center my-6 py-8 bg-transparent'>
             <div className='text-center'>
                 <h2 className="text-4xl font-extrabold uppercase text-accent">Millions Business Trust Us</h2>
                 <p className='text-xl pt-2 uppercase'>Try to make best product in the world!</p>

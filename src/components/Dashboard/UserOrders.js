@@ -1,6 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import React from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
+import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 import auth from "../../firebase.init";
 import Loading from '../shared/Loading/Loading';
@@ -45,6 +46,7 @@ const UserOrders = () => {
               <th>Author</th>
               <th>Quantity</th>
               <th>Price</th>
+              <th>Payment</th>
               <th>Action</th>
             </tr>
           </thead>
@@ -56,6 +58,7 @@ const UserOrders = () => {
                     <td>{order.user}</td>
                     <td>{order.qty}</td>
                     <td>${order.price}</td>
+                    <td><Link className="btn btn-xs btn-secondary" to='/dashboard/payment'>Pay</Link></td>
                     <td><button onClick={()=>handleDelete(order._id)} className="btn btn-xs">Delete</button></td>
                   </tr>)
             }

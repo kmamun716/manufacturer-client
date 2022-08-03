@@ -3,6 +3,7 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import AddProduct from './components/Dashboard/AddProduct';
 import ManageOrder from './components/Dashboard/ManageOrder';
+import Payment from './components/Dashboard/Payment';
 import UploadPhoto from './components/Dashboard/UploadPhoto';
 import UserOrders from './components/Dashboard/UserOrders';
 import UserProfile from './components/Dashboard/UserProfile';
@@ -35,6 +36,7 @@ function App() {
           <Route path='users' element={<RequireAuth><Users/></RequireAuth>} />
           <Route path='add-product' element={<RequireAuth><AddProduct/></RequireAuth>} />
           <Route path='manage' element={<RequireAuth><ManageOrder/></RequireAuth>} />
+          <Route path='payment' element={<RequireAuth><Payment/></RequireAuth>} />
         </Route>
         <Route path='*' element={<NotFound/>} />
       </Routes>
