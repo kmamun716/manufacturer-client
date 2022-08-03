@@ -1,9 +1,11 @@
 import { useQuery } from '@tanstack/react-query';
-import React from 'react';
+import React, { useState } from 'react';
 import { toast } from 'react-toastify';
+import DeleteConfirmation from '../shared/DeleteConfirmation/DeleteConfirmation';
 import Loading from '../shared/Loading/Loading';
 
 const ManageOrder = () => {
+  const [openDeleteModal, setOpenDeleteModal] = useState({});
     const {data: orders, isLoading, refetch} = useQuery(['orders'],()=>fetch('https://powerful-oasis-61993.herokuapp.com/mf/orders').then(res=>res.json()))
     if(isLoading){
         return <Loading/>
@@ -49,17 +51,24 @@ const ManageOrder = () => {
                 <td>{order.qty}</td>
                 <td>{order.price}</td>
                 <td>
-                  <button
-                    onClick={() => handleDelete(order)}
-                    className="btn btn-xs"
+                  <label
+                    htmlFor='delete-modal'
+                    onClick={() => setOpenDeleteModal(order)}
+                    className="btn btn-xs btn-warning"
                   >
                     Delete
-                  </button>
+                  </label>
                 </td>
               </tr>
             ))}
           </tbody>
         </table>
+        {openDeleteModal && (
+          <DeleteConfirmation
+            order={openDeleteModal}
+            handleDelete={handleDelete}
+          />
+        )}
       </div>
         </div>
     );
