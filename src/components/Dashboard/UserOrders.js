@@ -19,7 +19,10 @@ const UserOrders = () => {
   );
   const handleDelete =id=>{
     fetch(`https://powerful-oasis-61993.herokuapp.com/mf/orders/${id}`,{
-        method: 'DELETE'
+        method: 'DELETE',
+        headers:{
+          authorization: `Bearer ${localStorage.getItem('accessToken')}`
+        }
     })
     .then(res=>res.json())
     .then(result=>{

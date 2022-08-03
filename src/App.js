@@ -15,6 +15,7 @@ import Dashboard from './pages/Dashboard/Dashboard';
 import Home from './pages/Home/Home';
 import Login from './pages/Login/Login';
 import NotFound from './pages/NotFound/NotFound';
+import OurServices from './pages/OurServices/OurServices';
 import Parchage from './pages/Parchage/Parchage';
 import Registration from './pages/Registration/Registration';
 import RequireAuth from './pages/RequireAuth/RequireAuth';
@@ -27,6 +28,7 @@ function App() {
         <Route path='/' element={<Home/>} />
         <Route path='/login' element={<Login/>} />
         <Route path='/register' element={<Registration/>} />
+        <Route path='/services' element={<OurServices/>} />
         <Route path='/order-now/:id' element={<RequireAuth><Parchage/></RequireAuth>} />
         <Route path='/dashboard' element={<RequireAuth><Dashboard/></RequireAuth>}>
           <Route index element={<RequireAuth><UserProfile/></RequireAuth>} />

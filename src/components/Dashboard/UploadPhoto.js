@@ -25,7 +25,6 @@ const UploadPhoto = () => {
     })
       .then((res) => res.json())
       .then((result) => {
-        console.log(result)
         if (result.success) {
           const imgUrl = result.data.url;
           const userImage = {

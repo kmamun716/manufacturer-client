@@ -1,14 +1,29 @@
 import { useQuery } from '@tanstack/react-query';
 import React from 'react';
+import { toast } from 'react-toastify';
 import Loading from '../shared/Loading/Loading';
 
 const ManageOrder = () => {
-    const {data: orders, isLoading} = useQuery(['orders'],()=>fetch('https://powerful-oasis-61993.herokuapp.com/mf/orders').then(res=>res.json()))
+    const {data: orders, isLoading, refetch} = useQuery(['orders'],()=>fetch('https://powerful-oasis-61993.herokuapp.com/mf/orders').then(res=>res.json()))
     if(isLoading){
         return <Loading/>
     }
     const handleDelete=order=>{
-        console.log(order)
+        fetch(`https://powerful-oasis-61993.herokuapp.com/mf/orders/${order._id}`,{
+        method: 'DELETE',
+        headers:{
+          authorization: `Bearer ${localStorage.getItem('accessToken')}`
+        }
+    })
+    .then(res=>res.json())
+    .then(result=>{
+        if(result.deletedCount>0){
+            toast.success('Order is Deleted successfully');
+            refetch()
+        }else{
+            toast.error('something wrong')
+        }
+    })
     }
     return (
         <div>

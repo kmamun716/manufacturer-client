@@ -10,6 +10,7 @@ const Header = () => {
     const [user] = useAuthState(auth);
 
     const menuItem = <>
+        <li><Link to='/services'>Our Services</Link></li>
         {user? <>
             <li><Link to='/dashboard'>Dashboard</Link></li>
             <li><p 

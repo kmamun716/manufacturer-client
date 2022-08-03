@@ -108,7 +108,7 @@ const Registration = () => {
               )}
             </div>
             {signUpErrorMessage}
-            <input type="submit" value="Login" className="btn btn-block" />
+            <input type="submit" value="Register" className="btn btn-block" />
           </form>
         </div>
       </div>      
