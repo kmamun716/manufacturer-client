@@ -12,7 +12,7 @@ const CheckoutForm = ({order}) => {
   const {user, email, price} = order;
 
   useEffect(()=>{
-    fetch('http://localhost:4000/mf/payment',{
+    fetch('https://powerful-oasis-61993.herokuapp.com/mf/payment',{
       method: 'POST',
       headers:{
         'content-type': 'application/json',

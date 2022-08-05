@@ -12,7 +12,7 @@ const Payment = () => {
   const { id } = useParams();
 
   const { data, isLoading } = useQuery(["order"], () =>
-    fetch(`http://localhost:4000/mf/getOrder/${id}`, {
+    fetch(`https://powerful-oasis-61993.herokuapp.com/mf/getOrder/${id}`, {
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,
       },
