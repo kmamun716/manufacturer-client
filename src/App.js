@@ -38,7 +38,7 @@ function App() {
           <Route path='users' element={<RequireAuth><Users/></RequireAuth>} />
           <Route path='add-product' element={<RequireAuth><AddProduct/></RequireAuth>} />
           <Route path='manage' element={<RequireAuth><ManageOrder/></RequireAuth>} />
-          <Route path='payment' element={<RequireAuth><Payment/></RequireAuth>} />
+          <Route path='payment/:id' element={<RequireAuth><Payment/></RequireAuth>} />
         </Route>
         <Route path='*' element={<NotFound/>} />
       </Routes>

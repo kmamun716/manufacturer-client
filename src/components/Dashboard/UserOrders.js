@@ -69,12 +69,12 @@ const UserOrders = () => {
                 <td>{order.qty}</td>
                 <td>${order.price}</td>
                 <td>
-                  <Link
+                  {order.paid?<p className="text-xl text-center">Paid</p>:<Link
                     className="btn btn-xs btn-secondary"
-                    to="/dashboard/payment"
+                    to={`/dashboard/payment/${order._id}`}
                   >
                     Pay
-                  </Link>
+                  </Link>}
                 </td>
                 <td>
                   <label
