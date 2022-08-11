@@ -30,7 +30,8 @@ const UploadPhoto = () => {
           const userImage = {
             img: imgUrl,
           };
-          fetch(`https://powerful-oasis-61993.herokuapp.com/mf/updateUser/${user?.email}`,{
+          const uri = `https://powerful-oasis-61993.herokuapp.com/mf/updateUser/${user?.email}`;
+          fetch(`http://localhost:4000/mf/updateUser/${user?.email}`,{
                 method: 'PUT',
                 headers:{
                     'content-type': 'application/json'

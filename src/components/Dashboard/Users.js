@@ -7,7 +7,7 @@ import Loading from "../shared/Loading/Loading";
 
 const Users = () => {
   const [currentUser] = useAuthState(auth);
-  const { data, isLoading } = useQuery(["users"], () =>
+  const { data, isLoading, refetch } = useQuery(["users"], () =>
     fetch("https://powerful-oasis-61993.herokuapp.com/mf/allUser").then((res) => res.json())
   );
   if (isLoading) {
@@ -16,7 +16,9 @@ const Users = () => {
   const handleChangeRole = (email, role) => {
     const userRole = { role: "user" };
     const adminRole = { role: "admin" };
-    fetch(`https://powerful-oasis-61993.herokuapp.com/mf/userRole/${email}`, {
+    console.log(role)
+    const uri = `https://powerful-oasis-61993.herokuapp.com/mf/userRole/${email}`;
+    fetch(`http://localhost:4000/mf/userRole/${email}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",
@@ -25,9 +27,9 @@ const Users = () => {
     })
       .then((res) => res.json())
       .then((userData) => {
-        console.log(userData)
-        if (userData.result.modifiedCount > 0) {
+        if (userData.modifiedCount > 0) {
           toast.success(`Role Change successfully`);
+          refetch();
         } else {
           toast.error("Failed to change Role");
         }
@@ -60,14 +62,16 @@ const Users = () => {
                   {user.role === "admin" ? (
                     currentUser.email !== user.email && (
                       <button
-                        onClick={() => handleChangeRole(user.email, "user")}
+                        className="btn btn-sm btn-info"
+                        onClick={() => handleChangeRole(user.email, "admin")}
                       >
                         Make User
                       </button>
                     )
                   ) : (
-                    <button
-                      onClick={() => handleChangeRole(user.email, "admin")}
+                    <button 
+                      className="btn btn-sm btn-success"
+                      onClick={() => handleChangeRole(user.email, "user")}
                     >
                       Make Admin
                     </button>
