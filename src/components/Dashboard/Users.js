@@ -35,7 +35,7 @@ const Users = () => {
       });
   };
   const handleDelete = (user) => {
-    fetch(`http://localhost:4000/mf/user/${user}`,{
+    fetch(`https://powerful-oasis-61993.herokuapp.com/mf/user/${user}`,{
       method: 'DELETE'
     })
     .then(res=>res.json())
