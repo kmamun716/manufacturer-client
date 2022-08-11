@@ -16,9 +16,8 @@ const Users = () => {
   const handleChangeRole = (email, role) => {
     const userRole = { role: "user" };
     const adminRole = { role: "admin" };
-    console.log(role)
     const uri = `https://powerful-oasis-61993.herokuapp.com/mf/userRole/${email}`;
-    fetch(`http://localhost:4000/mf/userRole/${email}`, {
+    fetch(uri, {
       method: "PUT",
       headers: {
         "content-type": "application/json",
