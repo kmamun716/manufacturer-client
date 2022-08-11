@@ -35,7 +35,18 @@ const Users = () => {
       });
   };
   const handleDelete = (user) => {
-    console.log(user);
+    fetch(`http://localhost:4000/mf/user/${user}`,{
+      method: 'DELETE'
+    })
+    .then(res=>res.json())
+    .then(result=>{
+      if(result.deletedCount>0){
+        toast.success('user delete successfully');
+        refetch();
+      }else{
+        toast.error('There have some problem to delete');
+      }
+    })
   };
   return (
     <div>
@@ -77,12 +88,14 @@ const Users = () => {
                   )}
                 </td>
                 <td>
-                  <button
+                  {
+                    user.role !== "admin" && <button
                     onClick={() => handleDelete(user._id)}
                     className="btn btn-xs"
                   >
                     Delete
                   </button>
+                  }
                 </td>
               </tr>
             ))}
