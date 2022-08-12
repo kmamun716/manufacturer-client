@@ -2,7 +2,9 @@ import { Route, Routes } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import AddProduct from './components/Dashboard/AddProduct';
+import EditProduct from './components/Dashboard/EditProduct';
 import ManageOrder from './components/Dashboard/ManageOrder';
+import ManageProduct from './components/Dashboard/ManageProduct';
 import Payment from './components/Dashboard/Payment';
 import UploadPhoto from './components/Dashboard/UploadPhoto';
 import UserOrders from './components/Dashboard/UserOrders';
@@ -38,6 +40,8 @@ function App() {
           <Route path='users' element={<RequireAuth><Users/></RequireAuth>} />
           <Route path='add-product' element={<RequireAuth><AddProduct/></RequireAuth>} />
           <Route path='manage' element={<RequireAuth><ManageOrder/></RequireAuth>} />
+          <Route path='manage-product' element={<RequireAuth><ManageProduct/></RequireAuth>} />
+          <Route path='edit-product/:id' element={<RequireAuth><EditProduct/></RequireAuth>} />
           <Route path='payment/:id' element={<RequireAuth><Payment/></RequireAuth>} />
         </Route>
         <Route path='*' element={<NotFound/>} />

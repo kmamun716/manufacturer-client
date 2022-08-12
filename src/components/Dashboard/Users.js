@@ -75,7 +75,7 @@ const Users = () => {
                         className="btn btn-sm btn-info"
                         onClick={() => handleChangeRole(user.email, "admin")}
                       >
-                        Make User
+                        Remove Admin
                       </button>
                     )
                   ) : (
