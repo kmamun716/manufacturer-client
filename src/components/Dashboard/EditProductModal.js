@@ -15,7 +15,7 @@ const EditProductModal = ({ product, refetch, setOpenProductModal }) => {
   }
   const handleSubmit=e=>{
     e.preventDefault();
-    fetch(`http://localhost:4000/mf/edit/${product._id}`,{
+    fetch(`https://powerful-oasis-61993.herokuapp.com/mf/edit/${product._id}`,{
         method: 'PUT',
         headers:{
             'content-type': 'application/json',
