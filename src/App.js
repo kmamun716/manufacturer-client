@@ -20,6 +20,7 @@ import NotFound from './pages/NotFound/NotFound';
 import OurServices from './pages/OurServices/OurServices';
 import Parchage from './pages/Parchage/Parchage';
 import Registration from './pages/Registration/Registration';
+import RequireAdmin from './pages/RequireAdmin/RequireAdmin';
 import RequireAuth from './pages/RequireAuth/RequireAuth';
 
 function App() {
@@ -37,11 +38,11 @@ function App() {
           <Route path='my-order' element={<RequireAuth><UserOrders/></RequireAuth>} />
           <Route path='my-review' element={<RequireAuth><UserReview/></RequireAuth>} />
           <Route path='upload-photo' element={<RequireAuth><UploadPhoto/></RequireAuth>} />
-          <Route path='users' element={<RequireAuth><Users/></RequireAuth>} />
-          <Route path='add-product' element={<RequireAuth><AddProduct/></RequireAuth>} />
-          <Route path='manage' element={<RequireAuth><ManageOrder/></RequireAuth>} />
-          <Route path='manage-product' element={<RequireAuth><ManageProduct/></RequireAuth>} />
-          <Route path='edit-product/:id' element={<RequireAuth><EditProduct/></RequireAuth>} />
+          <Route path='users' element={<RequireAdmin><Users/></RequireAdmin>} />
+          <Route path='add-product' element={<RequireAdmin><AddProduct/></RequireAdmin>} />
+          <Route path='manage' element={<RequireAdmin><ManageOrder/></RequireAdmin>} />
+          <Route path='manage-product' element={<RequireAdmin><ManageProduct/></RequireAdmin>} />
+          <Route path='edit-product/:id' element={<RequireAdmin><EditProduct/></RequireAdmin>} />
           <Route path='payment/:id' element={<RequireAuth><Payment/></RequireAuth>} />
         </Route>
         <Route path='*' element={<NotFound/>} />

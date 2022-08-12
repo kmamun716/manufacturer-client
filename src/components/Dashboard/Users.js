@@ -56,7 +56,7 @@ const Users = () => {
           <thead>
             <tr>
               <th>Sl</th>
-              <th>Name</th>
+              <th>Email</th>
               <th>Role</th>
               <th>Change Role</th>
               <th>Action</th>
