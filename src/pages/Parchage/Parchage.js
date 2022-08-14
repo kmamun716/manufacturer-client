@@ -20,12 +20,11 @@ const Parchage = () => {
       });
   }, [id, resend]);
   const handleIncrease = () => {
-    const qty = service.minQty + 1;
+    const qty = parseInt(service.minQty) + 1;
     setService({ ...service, minQty: qty });
   };
   const handleDecrease = () => {
-    const qty = service.minQty - 1;
-    setMinQty(qty);
+    const qty = parseInt(service.minQty) - 1;
     setService({ ...service, minQty: qty });
   };
   const handleOrder = () => {
